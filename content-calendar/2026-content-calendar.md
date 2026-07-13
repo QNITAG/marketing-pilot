@@ -13,6 +13,7 @@ Keep this sorted by date. Link each row to its draft file.
 
 | Date | Platform | Format | Working title | Owner | Status | Draft |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-07-13 | LI | Post | Testers became .md file managers (meme) | | Draft | [linkedin/posts/2026-07-13-testers-md-file-managers/2026-07-13-testers-md-file-managers.md](../linkedin/posts/2026-07-13-testers-md-file-managers/2026-07-13-testers-md-file-managers.md) |
 | 2026-07-16 | LI | Post | 3 non-functional testing myths, busted | | Draft | [linkedin/posts/2026-07-16-non-functional-testing-myths.md](../linkedin/posts/2026-07-16-non-functional-testing-myths.md) |
 | 2026-07-18 | IG | Post | People of Qnit — meet the team | | Draft | [instagram/posts/2026-07-18-people-of-qnit-spotlight.md](../instagram/posts/2026-07-18-people-of-qnit-spotlight.md) |
 | 2026-07-22 | IG | Reel | A day at Qnit — QA in motion | | Draft | [instagram/reels/2026-07-22-day-in-the-life-qa.md](../instagram/reels/2026-07-22-day-in-the-life-qa.md) |

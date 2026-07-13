@@ -22,17 +22,20 @@ each SVG at 1080px width (height follows the SVG) and writes:
     └── linkedin/          # 01.png … NN.png  (+ document.pdf only with --pdf)
 ```
 
-PNGs are always written — use them for single-image and multi-image posts. Pass
-`--pdf` to also build `export/linkedin/document.pdf` for LinkedIn's native document
-(PDF) post, which is a distinct format.
+By default, PNGs are written for both platforms. Use `--target` to choose
+`linkedin`, `instagram`, or `both`. Pass `--pdf` to also build
+`export/linkedin/document.pdf` for LinkedIn's native document (PDF) post, which
+is a distinct format.
 
 ## Usage
 
 ```bash
 # from export-tooling/
 npm install                                          # first time only
-npm run export -- linkedin/posts/2026-07-30-slug        # PNGs (single-image / multi-image)
-npm run export -- linkedin/posts/2026-07-30-slug --pdf  # also build the document post PDF
+npm run export -- linkedin/posts/2026-07-30-slug                             # PNGs for both platforms
+npm run export -- linkedin/posts/2026-07-30-slug --target linkedin           # PNGs only for LinkedIn
+npm run export -- linkedin/posts/2026-07-30-slug --target instagram          # PNGs only for Instagram
+npm run export -- linkedin/posts/2026-07-30-slug --target linkedin --pdf     # LinkedIn PNGs + document PDF
 ```
 
 Fonts are loaded from the repo's committed Quicksand TTFs, so exports are

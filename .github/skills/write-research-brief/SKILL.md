@@ -12,9 +12,15 @@ description: "Create a Qnit research brief from the standard template. Use when 
 
 ## Procedure
 
-1. Create `source-material/<category>/<topic-slug>/research-brief.md` using the structure below. For an existing campaign folder, write it there — never start a second source tree.
-2. Fill every section with sourced material, keeping verified facts separate from ideas, quotes, and unknowns.
-3. Set frontmatter `status` to `Ready for drafting` only when the research is complete; otherwise use `Draft` or `Needs input` and list the gaps under `Handoff status`.
+1. Resolve the target before gathering evidence or editing:
+	- **Named campaign:** when the user identifies a campaign or campaign path, use `source-material/campaigns/<campaign-slug>/research-brief.md` only if the requested subject and objective belong to the same research unit. Keep one source tree for that identified campaign.
+	- **Explicit continuation:** update an existing brief only when the user identifies its path; explicitly asks to continue or update a named existing brief, campaign, or topic; or directly refers to the brief already established in the same conversation. A subject name alone does not identify an existing brief.
+	- **New standalone request:** in every other case, create `source-material/research/YYYY-MM-DD-<topic-slug>/research-brief.md` using the request date. Do not search for a similar brief to reuse.
+2. Before updating an existing brief, compare its title, objective, and campaign or topic with the request. If they do not describe the same research unit, stop and resolve a new target instead.
+3. If a new standalone target already exists for that date and slug but continuation is not explicit, ask whether to update it or create a separate request. Do not overwrite it or invent a suffix by inference.
+4. Create or update the resolved `research-brief.md` using the structure below. A change of subject, objective, or campaign starts a new research request, even in the same chat.
+5. Fill every section with sourced material, keeping verified facts separate from ideas, quotes, and unknowns.
+6. Set frontmatter `status` to `Ready for drafting` only when the research is complete; otherwise use `Draft` or `Needs input` and list the gaps under `Handoff status`.
 
 ## Brief structure
 
@@ -86,3 +92,5 @@ research_date:
 - Every material external claim needs a recorded source; put unsupported claims under `Unknowns and risks` or `Do not claim`.
 - Do not invent quotes, metrics, names, or outcomes to fill a section — leave it open and flag it.
 - Keep the brief the single source of truth; do not write final post copy here.
+- Never update a brief merely because it is nearby, recent, topically similar, or the only brief found.
+- The rule against a second campaign source tree applies only after the request has been identified as belonging to that campaign.

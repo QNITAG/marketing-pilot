@@ -1,42 +1,24 @@
 # Source Material
 
-Raw inputs that posts are **derived from** — briefs, notes, transcripts, research,
-reference docs, screenshots, product/service info, quotes, and links.
-
-This is the *source*; the polished output lives in [../instagram/](../instagram/) and
-[../linkedin/](../linkedin/). Keeping sources in
-the repo makes every post traceable back to where its facts and messaging came from —
-and gives Copilot the raw context it needs to draft on-topic.
+This folder is a living repository of the raw material that informs marketing content: 
+research, briefs, notes, transcripts, reference documents, links, and other factual context. 
+It is the source behind the finished content in [../instagram/](../instagram/) and [../linkedin/](../linkedin/).
 
 ## Structure
 
-Organize by **theme and purpose** — one subfolder per campaign, initiative, or idea:
+Material is grouped by subject or purpose, then by a specific topic where useful:
 
 ```
 source-material/
-├── campaigns/            # time-bound, goal-driven pushes
-│   ├── ai-copilot-inm-testing-promo/
-│   └── sap-promo/
-└── ideas/               # evergreen themes / backlog (create as needed)
+├── campaigns/       # source material for a particular campaign
+│   └── <topic>/
+└── <topic>/        # specific topic or subject, not tied to a campaign
+    ├── research-brief.md  # traceable research brief for the topic, produced by the Content Researcher agent
+    └── <source-material>  # any other source material (notes, transcripts, documents, links, etc.)
+└── research/        # broader unsorted ongoing research and reference material, intended for future use and ongoing research
+	└── <topic>/
 ```
 
-Add other top-level buckets (e.g. `events/`, `research/`, `personas/`) when a new
-theme justifies it. Nest further where useful (e.g. `campaigns/<name>/assets/`,
-`campaigns/<name>/notes/`).
-
-## What goes in a theme folder
-
-- A short `README.md` describing the purpose, audience, and key message.
-- Raw material: briefs, notes, transcripts, research, links, reference images.
-- Anything a draft — or Copilot — should read before writing posts on this theme.
-
-## Naming
-
-- Folder names: `lowercase-kebab-case`, descriptive of the theme/purpose.
-- Date raw files as `YYYY-MM-DD-slug.ext` where a date is meaningful.
-
-## Linking posts back to their source
-
-When a post is derived from source material, reference it so the trail is clear —
-add a `source:` line in the draft's front matter (or Notes) pointing to the relevant
-`source-material/…` folder.
+The exact folders and files vary with the work. The important distinction is that
+this directory holds source context, while platform directories hold drafted and
+ready-to-publish content.

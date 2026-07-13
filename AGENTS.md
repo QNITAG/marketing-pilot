@@ -20,6 +20,6 @@ This is a marketing-as-code workspace for Qnit AG. Use [README.md](README.md) fo
 ## Files and Validation
 
 - Name platform drafts `YYYY-MM-DD-short-slug.md`. Keep planning in Markdown and the final ready-to-post caption in the colocated plain-text caption file; that `.txt` file is the posting source of truth.
-- Follow [source-material/README.md](source-material/README.md) for source organization and traceability, and the platform guidance in [instagram/README.md](instagram/README.md) or [linkedin/README.md](linkedin/README.md).
+- Follow [source-material/README.md](source-material/README.md) for source organization and traceability.
 - For LinkedIn post imagery (single-image, multi-image, document/PDF), use the [design-linkedin-post-visuals skill](.github/skills/design-linkedin-post-visuals/SKILL.md): author visuals as SVG, then render them with the [export-tooling](export-tooling/README.md) engine — `npm run export -- <project-path>` (run `npm install` in `export-tooling/` first when dependencies are absent).
 - Do not edit generated exports by hand. Regenerate them from the SVG sources and commit the resulting PNG/PDF files when output changes.

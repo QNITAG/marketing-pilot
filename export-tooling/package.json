@@ -1,0 +1,14 @@
+{
+  "name": "qnit-export-tooling",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "SVG -> PNG/PDF export engine for Qnit AG social visuals (marketing as code).",
+  "scripts": {
+    "export": "node scripts/export-visuals.mjs"
+  },
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "pdf-lib": "^1.17.1"
+  }
+}

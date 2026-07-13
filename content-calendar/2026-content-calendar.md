@@ -18,7 +18,7 @@ Keep this sorted by date. Link each row to its draft file.
 | 2026-07-22 | IG | Reel | A day at Qnit — QA in motion | | Draft | [instagram/reels/2026-07-22-day-in-the-life-qa.md](../instagram/reels/2026-07-22-day-in-the-life-qa.md) |
 | 2026-07-25 | LI | Article | Why AI-driven quality engineering is the next wave | | Draft | [linkedin/articles/2026-07-25-ai-driven-quality-engineering.md](../linkedin/articles/2026-07-25-ai-driven-quality-engineering.md) |
 | 2026-07-29 | LI | Post | We're hiring — QA & test automation engineers | | Idea | |
-| 2026-07-30 | IG + LI | Carousel | 3 non-functional testing myths (carousel) | | Draft | [carousels/2026-07-30-qa-myths/carousel.md](../carousels/2026-07-30-qa-myths/carousel.md) |
+| 2026-07-30 | IG + LI | Carousel | 3 non-functional testing myths (carousel) | | Idea | |
 | 2026-08-05 | IG | Post | Behind the scenes: team building recap | | Idea | |
 
 ## Campaign themes (quarterly)

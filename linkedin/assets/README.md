@@ -20,9 +20,10 @@ and logo usage. Quick reference:
 - **Font:** Quicksand — Bold (700) headings, Medium (500) body.
 - **Logo:** use the **white** logo on dark navy, **blue** on light backgrounds.
 
-## Carousels
+## Post visuals
 
-Carousel slides are authored as SVG and exported in
-[../../carousels/](../../carousels/) — LinkedIn gets a `carousel.pdf` (native
-document post) plus PNGs in each carousel's `export/linkedin/` folder. Don't
-hand-place carousel files here.
+Single-image, multi-image, and document/PDF visuals are authored as SVG (see the
+[design-linkedin-post-visuals skill](../../.github/skills/design-linkedin-post-visuals/SKILL.md))
+and rendered with [../../export-tooling/](../../export-tooling/). LinkedIn gets a
+`document.pdf` for document posts plus PNGs in each post's own `export/linkedin/`
+folder. Don't hand-place exported files here.

@@ -21,6 +21,6 @@ and logo usage. Quick reference:
 
 ## Carousels
 
-Carousel slides are authored as SVG and exported to PNG in
-[../../carousels/](../../carousels/) — Instagram exports land in each carousel's
-`export/instagram/` folder (1080×1350). Don't hand-place carousel PNGs here.
+Carousel and multi-image slides are authored as SVG and exported to PNG with
+[../../export-tooling/](../../export-tooling/) — Instagram PNGs (1080×1350) land in
+each project's own `export/instagram/` folder. Don't hand-place exported PNGs here.

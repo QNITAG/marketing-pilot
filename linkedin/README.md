@@ -4,9 +4,9 @@ Drafts and assets for LinkedIn content.
 
 ## Folders
 
-- [posts/](posts/) — short-form post drafts
-- [articles/](articles/) — long-form article drafts
-- [assets/](assets/) — source images/video and exports
+- [posts/](posts/) — short-form posts (one folder per post: draft, caption)
+- [articles/](articles/) — long-form articles (one folder per article)
+- [assets/](assets/) — shared/reusable source images and video
 
 ## Quick reference
 
@@ -16,5 +16,7 @@ Drafts and assets for LinkedIn content.
 - **Image:** 1200×627 (link/landscape) or 1080×1080 (square).
 - **Tone:** professional, insight-driven, credible.
 
-Start a new draft by copying the matching template from the `write-social-content` skill in
-[../.github/skills/write-social-content/assets/](../.github/skills/write-social-content/assets/).
+Start a new draft by creating a post folder `<type>/YYYY-MM-DD-short-slug/` and copying the
+matching template from the `write-social-content` skill in
+[../.github/skills/write-social-content/assets/](../.github/skills/write-social-content/assets/)
+into it as `YYYY-MM-DD-short-slug.md`.

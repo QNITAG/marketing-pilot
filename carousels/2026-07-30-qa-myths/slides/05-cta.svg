@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+  <rect width="1080" height="1350" fill="#070656"/>
+  <text x="90" y="150" font-family="Quicksand" font-weight="700" font-size="52" fill="#FFFFFF">Qnit<tspan fill="#21b4bb">.</tspan></text>
+
+  <rect x="90" y="440" width="120" height="14" rx="7" fill="#ff7065"/>
+
+  <text x="90" font-family="Quicksand" font-weight="700" font-size="84" fill="#FFFFFF">
+    <tspan x="90" y="590">Ship cloud native</tspan>
+    <tspan x="90" y="684">with confidence.</tspan>
+  </text>
+
+  <text x="90" font-family="Quicksand" font-weight="500" font-size="40" fill="#21b4bb">
+    <tspan x="90" y="840">See how we approach non-functional</tspan>
+    <tspan x="90" y="894">testing.</tspan>
+  </text>
+
+  <path d="M90 1091 H140 M140 1091 L122 1075 M140 1091 L122 1107" fill="none" stroke="#ff7065" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="162" y="1105" font-family="Quicksand" font-weight="700" font-size="42" fill="#ff7065">qnit.de</text>
+  <text x="90" y="1180" font-family="Quicksand" font-weight="500" font-size="36" fill="#FFFFFF" opacity="0.85">Follow @qnit_ag</text>
+</svg>

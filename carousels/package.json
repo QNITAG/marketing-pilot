@@ -1,0 +1,14 @@
+{
+  "name": "qnit-carousels",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "SVG -> PNG/PDF export pipeline for Qnit AG social carousels (marketing as code).",
+  "scripts": {
+    "export": "node scripts/export.mjs"
+  },
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "pdf-lib": "^1.17.1"
+  }
+}

@@ -3,8 +3,8 @@
 Raw inputs that posts are **derived from** — briefs, notes, transcripts, research,
 reference docs, screenshots, product/service info, quotes, and links.
 
-This is the *source*; the polished output lives in [../instagram/](../instagram/),
-[../linkedin/](../linkedin/), and [../carousels/](../carousels/). Keeping sources in
+This is the *source*; the polished output lives in [../instagram/](../instagram/) and
+[../linkedin/](../linkedin/). Keeping sources in
 the repo makes every post traceable back to where its facts and messaging came from —
 and gives Copilot the raw context it needs to draft on-topic.
 

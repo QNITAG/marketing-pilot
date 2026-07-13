@@ -33,6 +33,7 @@ The agents support the content-as-code workflow. They do not schedule or publish
 | Keep publishing out of both agents | Drafting agents must not access Instagram, LinkedIn, Buffer, credentials, or publishing tools. |
 | Extract only the brief scaffold into a skill | The research brief contract is reused and format-stable, so it lives inline in a `write-research-brief` skill. Broader skill extraction stays deferred until the workflow is tested on real content. |
 | Wire the workflow with agent handoffs | The Content Researcher offers platform-specific handoffs to the Social Content Editor, and the editor offers a return handoff for missing evidence. Agents stay self-contained and do not load this concept document at runtime. |
+| Give each post its own folder | Every post's draft, caption, and post-specific assets live together in `<platform>/<type>/YYYY-MM-DD-short-slug/`, so a post is a self-contained unit rather than loose files in a platform root. |
 
 ## Existing foundations
 
@@ -260,6 +261,8 @@ If a material fact is missing, the editor returns the issue to the user or Conte
 | LinkedIn | Post | Planning `.md` plus matching `.caption.txt` |
 | LinkedIn | Article | Article `.md`; promotional post and caption only when requested |
 | Instagram and LinkedIn | Carousel | Copy and narrative may be planned; SVG/PDF/PNG production remains outside the initial agent unless explicitly requested and supported by the existing carousel pipeline. |
+
+Each deliverable lives in its own post folder `<platform>/<type>/YYYY-MM-DD-short-slug/`.
 
 ### Non-responsibilities
 

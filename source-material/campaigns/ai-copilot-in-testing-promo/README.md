@@ -1,10 +1,10 @@
-# Campaign — AI Copilot for INM testing (promo)
+# Campaign — AI Copilot in testing (promo)
 
 Status: Planning
 
 ## Purpose
 
-_Promote Qnit's use of AI Copilot in INM testing. Add the goal and angle._
+_Promote Qnit's use of AI Copilot in testing. Add the goal and angle._
 
 ## Audience
 

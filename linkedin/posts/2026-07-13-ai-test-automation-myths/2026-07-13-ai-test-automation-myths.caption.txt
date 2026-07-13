@@ -1,0 +1,25 @@
+AI can accelerate test automation.
+It does not make test strategy optional.
+
+Five myths worth challenging before teams scale AI-assisted testing:
+
+Myth 1: "AI will replace testers."
+Reality: AI can suggest tests and code. People still define intent, assess risk, and review the output.
+
+Myth 2: "AI-generated tests are automatically correct and complete."
+Reality: generated tests can miss scenarios, and generated code still needs validation.
+
+Myth 3: "With AI, every test should be automated."
+Reality: teams still need to choose the right test level and decide when manual testing is more appropriate.
+
+Myth 4: "AI eliminates flaky tests and maintenance."
+Reality: scope, synchronization, isolation, test data, and architecture still shape reliability.
+
+Myth 5: "Governance can come later."
+Reality: responsible adoption means managing trustworthiness and risk across the AI lifecycle.
+
+AI can be a useful accelerator. The quality of the outcome still depends on the engineering decisions around it.
+
+Which guardrail would you establish first before scaling AI-assisted testing: review, reliability, or governance?
+
+#AI #SoftwareQuality #qualityassurance #testautomation

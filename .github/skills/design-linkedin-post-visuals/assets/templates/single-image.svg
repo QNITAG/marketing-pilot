@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
-  <!-- Qnit slide — STATEMENT template. A bold claim + the reality. -->
-  <rect width="1080" height="1350" fill="#05032e"/>
+  <!-- Qnit single-image post — 1080x1350 (4:5). For 1:1 use 1080x1080; landscape ~1.91:1 (e.g. 1200x627). -->
+  <rect width="1080" height="1350" fill="#070656"/>
   <!-- Logo (Qnit white, for dark backgrounds; blue variant on light) -->
   <svg x="90" y="90" width="132" height="71.25" viewBox="0 0 176 95" role="img" aria-label="Qnit logo">
     <!-- Generator: Sketch 61 (89581) - https://sketch.com -->
@@ -11,23 +11,21 @@
     </g>
   </svg>
 
-  <!-- Oversized quote mark accent -->
-  <text x="78" y="440" font-family="Quicksand" font-weight="700" font-size="240" fill="#ff7065">&#8220;</text>
+  <!-- Accent bar -->
+  <rect x="90" y="360" width="120" height="14" rx="7" fill="#ff7065"/>
 
-  <!-- Statement -->
-  <text x="90" font-family="Quicksand" font-weight="700" font-size="76" fill="#FFFFFF">
-    <tspan x="90" y="500">A bold statement</tspan>
-    <tspan x="90" y="590">that challenges an</tspan>
-    <tspan x="90" y="680">assumption.</tspan>
+  <!-- Headline -->
+  <text x="90" font-family="Quicksand" font-weight="700" font-size="88" fill="#FFFFFF">
+    <tspan x="90" y="500">One clear point</tspan>
+    <tspan x="90" y="600">for the feed.</tspan>
   </text>
 
-  <!-- Reality -->
-  <text x="90" y="930" font-family="Quicksand" font-weight="700" font-size="34" fill="#21b4bb" letter-spacing="4">REALITY</text>
-  <text x="90" font-family="Quicksand" font-weight="500" font-size="40" fill="#FFFFFF">
-    <tspan x="90" y="1000">Explain what is actually true in one or</tspan>
-    <tspan x="90" y="1054">two supporting lines.</tspan>
+  <!-- Supporting line -->
+  <text x="90" font-family="Quicksand" font-weight="500" font-size="40" fill="#21b4bb">
+    <tspan x="90" y="770">A short supporting line that adds the</tspan>
+    <tspan x="90" y="824">context or the takeaway.</tspan>
   </text>
 
-  <!-- Slide number -->
-  <text x="990" y="1240" text-anchor="end" font-family="Quicksand" font-weight="500" font-size="32" fill="#FFFFFF" opacity="0.6">02</text>
+  <!-- Footer handle -->
+  <text x="90" y="1240" font-family="Quicksand" font-weight="500" font-size="34" fill="#FFFFFF" opacity="0.85">qnit.de · @qnit_ag</text>
 </svg>

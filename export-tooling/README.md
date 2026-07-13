@@ -1,70 +1,61 @@
-# Carousels
+# Export tooling
 
-Image carousels (statements, short texts, info tidbits) are Qnit's main post style.
-Slides are authored as **editable SVG** (versioned source) and exported to the
-formats the platforms actually accept.
+Node engine that renders **editable SVG** sources to the raster and document
+formats the platforms accept. This is the build step only — authoring (templates,
+brand rules, and which post format to build) lives in the
+[design-linkedin-post-visuals skill](../.github/skills/design-linkedin-post-visuals/SKILL.md).
 
-> SVG can't be posted directly. Instagram takes **PNG/JPEG**; LinkedIn's native
-> swipeable carousel is a **PDF** document post. This pipeline exports both from one
-> SVG source — see [../brand/brand-voice.md](../brand/brand-voice.md) for palette & type.
+> SVG can't be posted directly. Instagram takes **PNG/JPEG**; LinkedIn's document
+> post takes a **PDF**. This engine exports both from one SVG source — see
+> [../brand/brand-voice.md](../brand/brand-voice.md) for palette & type.
 
-## Structure
+## What it does
+
+Given a project folder with a `visuals/` subfolder of numbered SVGs, it renders
+each SVG at 1080px width (height follows the SVG) and writes:
 
 ```
-carousels/
-├── templates/                  # reusable starter slides (cover, statement, tidbit, cta)
-├── scripts/export.mjs          # SVG -> PNG (+ PDF) build
-├── package.json                # `npm run export`
-└── <YYYY-MM-DD-slug>/
-    ├── carousel.md             # brief: caption, hashtags, slide copy, alt text, status
-    ├── slides/                 # source SVGs, numbered (01-…, 02-…)
-    └── export/                 # generated + committed
-        ├── instagram/          # 01.png … NN.png  (1080×1350)
-        └── linkedin/           # carousel.pdf + 01.png … NN.png
+<project>/
+├── visuals/               # source SVGs, numbered (01-…, 02-…)
+└── export/                # generated + committed
+    ├── instagram/         # 01.png … NN.png
+    └── linkedin/          # 01.png … NN.png  (+ document.pdf only with --pdf)
 ```
 
-## Create a carousel
+PNGs are always written — use them for single-image and multi-image posts. Pass
+`--pdf` to also build `export/linkedin/document.pdf` for LinkedIn's native document
+(PDF) post, which is a distinct format.
 
-1. Copy the folder pattern: `carousels/YYYY-MM-DD-slug/`.
-2. Add a `carousel.md` brief (copy from an existing one).
-3. Build slides in `slides/` from [templates/](templates/) — number them `01-…`, `02-…`.
-   - Canvas **1080×1350** (4:5). Keep ~90px safe margins.
-   - Colors: bg `#070656` or `#05032e`; accents `#21b4bb` `#3c91e6` `#ff7065`;
-     text `#FFFFFF`; grey `#5c5c5c` for body only.
-   - Font **Quicksand**: headings Bold (700), body Medium (500).
-   - SVG has no auto-wrap — break lines manually with `<tspan>`.
-4. Write the caption(s) as plain-text, copy-paste-ready files next to `carousel.md`:
-   `caption.instagram.txt` and/or `caption.linkedin.txt` (no Markdown; hashtags at the end).
-5. Export (see below) and commit the generated `export/` files.
-
-## Export
+## Usage
 
 ```bash
-# from carousels/
-npm install                          # first time only
-npm run export                       # export every carousel
-npm run export -- 2026-07-30-qa-myths  # export a single carousel
+# from export-tooling/
+npm install                                          # first time only
+npm run export -- linkedin/posts/2026-07-30-slug        # PNGs (single-image / multi-image)
+npm run export -- linkedin/posts/2026-07-30-slug --pdf  # also build the document post PDF
 ```
 
 Fonts are loaded from the repo's committed Quicksand TTFs, so exports are
-reproducible without installing anything system-wide.
+reproducible without installing anything system-wide. Don't hand-edit the
+generated files in `export/` — regenerate them from the SVG sources.
 
 ### No Node? Fallbacks
 
-Render one slide with a standalone tool (fonts must be available):
+Render one SVG with a standalone tool (fonts must be available):
 
 ```bash
 # resvg CLI
-resvg --font-family "Quicksand" slides/01-cover.svg export/instagram/01.png
+resvg --font-family "Quicksand" visuals/01-cover.svg export/instagram/01.png
 
 # Inkscape CLI
-inkscape slides/01-cover.svg --export-type=png -w 1080 -h 1350 -o export/instagram/01.png
+inkscape visuals/01-cover.svg --export-type=png -w 1080 -h 1350 -o export/instagram/01.png
 ```
 
-Then combine PNGs into a PDF for LinkedIn (e.g. `img2pdf export/linkedin/*.png -o export/linkedin/carousel.pdf`).
+Then combine PNGs into a PDF for LinkedIn (e.g. `img2pdf export/linkedin/*.png -o export/linkedin/document.pdf`).
 
 ## Publishing
 
-- **Instagram:** upload `export/instagram/*.png` as a carousel (same 4:5 for every slide).
-- **LinkedIn:** upload `export/linkedin/carousel.pdf` as a document post for the native
-  swipe experience, or the PNGs as a multi-image post.
+- **Single-image post:** upload the one PNG (LinkedIn or Instagram).
+- **Multi-image post (LinkedIn):** upload `export/linkedin/*.png` in order.
+- **Document post (LinkedIn):** upload `export/linkedin/document.pdf` for the native swipe experience.
+- **Instagram carousel:** upload `export/instagram/*.png` (same 4:5 for every slide).

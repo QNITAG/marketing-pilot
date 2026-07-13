@@ -42,8 +42,10 @@ with the brand as code keeping quality and consistency high.
 - Repurposes one piece across Instagram and LinkedIn while respecting each platform's
   tone and specs.
 - Reference brand assets (logo, colors, fonts) from [brand/assets/](brand/assets/).
-- Drafts **carousels as SVG** in [carousels/](carousels/), then a build step exports
-  PNG (Instagram) and PDF (LinkedIn) — content as code, exports reproducible.
+- Designs **post imagery as SVG** via the
+  [design-linkedin-post-visuals skill](.github/skills/design-linkedin-post-visuals/),
+  then the [export-tooling](export-tooling/) engine renders PNG (Instagram) and PDF
+  (LinkedIn) — content as code, exports reproducible.
 
 ## Structure
 
@@ -51,24 +53,22 @@ with the brand as code keeping quality and consistency high.
 marketing-pilot/
 ├── .github/                # Copilot agents and skills (drafting templates live here)
 │   ├── agents/             # content-researcher, social-content-editor
-│   └── skills/             # write-research-brief, write-social-content (+ assets)
+│   └── skills/             # write-research-brief, write-social-content, design-linkedin-post-visuals (+ assets)
 ├── brand/                  # Brand voice, visual guidelines, hashtag bank
 ├── content-calendar/       # Editorial calendar and posting schedule
 ├── templates/              # Reusable content briefs and checklists
 ├── source-material/         # Raw inputs posts are derived from (by campaign / idea)
-├── carousels/              # SVG carousel source + PNG/PDF export pipeline
-│   ├── templates/          # Reusable starter slides (cover, statement, tidbit, cta)
-│   ├── scripts/            # export.mjs — SVG → PNG (+ PDF) build
-│   └── <slug>/             # One carousel: slides/ (SVG) + export/ (PNG, PDF)
-├── instagram/              # Instagram-specific content
-│   ├── posts/              # Feed post drafts (caption + asset notes)
-│   ├── stories/            # Story drafts and sequences
-│   ├── reels/              # Reel scripts and shot lists
-│   └── assets/             # Image/video source files & exports
-└── linkedin/               # LinkedIn-specific content
-    ├── posts/              # Short-form post drafts
-    ├── articles/           # Long-form article drafts
-    └── assets/             # Image/video source files & exports
+├── export-tooling/         # Node SVG → PNG/PDF export engine (renders a project's visuals/)
+│   └── scripts/            # export-visuals.mjs — SVG → PNG (+ PDF) build
+├── instagram/              # Instagram-specific content (one folder per post)
+│   ├── posts/              # Feed post folders (draft + caption + assets)
+│   ├── stories/            # Story folders
+│   ├── reels/              # Reel folders (script + caption)
+│   └── assets/             # Shared/reusable image & video source files
+└── linkedin/               # LinkedIn-specific content (one folder per post)
+    ├── posts/              # Short-form post folders (draft + caption)
+    ├── articles/           # Article folders
+    └── assets/             # Shared/reusable image & video source files
 ```
 
 ## Workflow
@@ -85,9 +85,10 @@ marketing-pilot/
 
 ## Conventions
 
-- Name drafts `YYYY-MM-DD-short-slug.md` (publish/target date first) for easy sorting.
-- Keep source assets in the platform `assets/` folder; reference them by relative path.
-- One draft file per post. Keep captions, hashtags, and asset notes together.
+- Give each post its own folder: `<platform>/<type>/YYYY-MM-DD-short-slug/` (publish/target date first) for easy sorting.
+- Keep everything for one post in that folder — the draft `.md`, the `.caption.txt`, and any post-specific assets.
+- Name the draft and caption after the folder slug (`YYYY-MM-DD-short-slug.md`, `YYYY-MM-DD-short-slug.caption.txt`).
+- Shared, reusable assets can still live in the platform `assets/` folder; post-specific assets live in the post folder.
 - Keep the raw inputs a post is derived from in [source-material/](source-material/),
   organized by theme/purpose (campaign or idea); reference them from the draft.
 
@@ -99,8 +100,8 @@ it as long as it needs to be and no longer, unless a longer form is deliberately
 
 - Store the final caption as a **plain-text `.txt` file** (no Markdown formatting) so
   it copy-pastes cleanly into Instagram/LinkedIn. Hashtags go at the end of the file.
-- Colocate it with the post and name it to match:
-  - Single-file drafts: `<slug>.caption.txt`
+- Colocate it in the post's folder and name it to match:
+  - Single-platform posts: `<slug>.caption.txt`
   - Carousels / multi-platform: `caption.<platform>.txt` (e.g. `caption.instagram.txt`)
 - The `.md` draft/brief stays the planning doc; the `.txt` is the source of truth for
   what actually gets posted.

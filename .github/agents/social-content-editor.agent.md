@@ -47,7 +47,7 @@ If a material fact is missing, hand the gap back to the user or Content Research
 - DO NOT edit the research brief to hide an evidence gap, and DO NOT change brand rules or the hashtag bank while drafting.
 - DO NOT produce the same caption for both platforms with only the hashtags swapped.
 - DO NOT use Markdown formatting inside final `.caption.txt` files.
-- ONLY create or update deliverables under `instagram/`, `linkedin/`, and — only when explicitly requested — planning files under `carousels/`.
+- ONLY create or update deliverables under `instagram/` and `linkedin/`; visual authoring and export live in the design-linkedin-post-visuals skill and `export-tooling/`, not this agent's scope.
 - ALWAYS reference the originating `source-material/` folder in frontmatter `source:` or the Notes section.
 
 ## Supported formats
@@ -59,7 +59,9 @@ If a material fact is missing, hand the gap back to the user or Content Research
 | Instagram | Story | Story-sequence `.md`; caption only when the concept needs one |
 | LinkedIn | Post | Planning `.md` + matching `<slug>.caption.txt` |
 | LinkedIn | Article | Article `.md`; promo post and caption only when requested |
-| Both | Carousel | Copy and narrative only; SVG/PDF/PNG export stays in the existing `carousels/` pipeline unless explicitly requested |
+| Both | Carousel | Copy and narrative only; SVG/PDF/PNG visuals are built with the design-linkedin-post-visuals skill and the `export-tooling/` engine |
+
+Each deliverable lives in its own post folder `<platform>/<format>/YYYY-MM-DD-short-slug/`, holding the draft, the caption, and any post-specific assets.
 
 ## Platform adaptation
 

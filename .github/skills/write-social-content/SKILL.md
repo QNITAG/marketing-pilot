@@ -24,10 +24,10 @@ Start every draft by copying the matching template from this skill's assets:
 
 ## Procedure
 
-1. Copy the matching template to the platform folder as `<platform>/<format>/YYYY-MM-DD-short-slug.md`, keeping the frontmatter and section headings.
+1. Create a per-post folder `<platform>/<format>/YYYY-MM-DD-short-slug/` and copy the matching template into it as `YYYY-MM-DD-short-slug.md`, keeping the frontmatter and section headings.
 2. Fill each section from the research brief; do not invent facts, quotes, names, or outcomes.
-3. Where the repository convention requires a caption, write the final plain-text caption to `<slug>.caption.txt` (no Markdown), hashtags at the end.
-4. Reference the originating `source-material/` folder in frontmatter `source:` or the Notes section.
+3. Where the repository convention requires a caption, write the final plain-text caption to `YYYY-MM-DD-short-slug.caption.txt` (no Markdown) in the same post folder, hashtags at the end.
+4. Keep any post-specific assets in the same post folder; reference the originating `source-material/` folder in frontmatter `source:` or the Notes section.
 
 ## Rules
 

@@ -1,6 +1,7 @@
 ---
 name: design-linkedin-post-visuals
 description: "Design SVG visuals for LinkedIn single-image, multi-image, and document/PDF posts, then export them to PNG/PDF. Use when a LinkedIn feed post needs on-brand imagery — a single graphic, an image sequence, or a swipeable document — built as editable SVG from Qnit templates."
+argument-hint: State for which platforms to create the images. Either LinkedIn, Instagram, or both 
 ---
 
 # Design LinkedIn Post Visuals
@@ -10,6 +11,17 @@ the formats LinkedIn accepts. SVG is the versioned source; the
 [export engine](./references/exporting.md) turns it into PNG (and a
 PDF for document posts). This skill covers visuals only — write the caption and draft
 with the [write-social-content skill](../write-social-content/SKILL.md).
+
+## Invocation input
+
+Use this skill with an explicit target so export behavior is deterministic.
+
+Target controls PNG output location:
+- `linkedin`: write only `export/linkedin/*.png`
+- `instagram`: write only `export/instagram/*.png`
+- `both`: write both sets (default)
+
+PDF is only valid when target includes LinkedIn (`target=linkedin` or `target=both`).
 
 ## When to use
 
@@ -42,38 +54,50 @@ Start from a copy of the matching SVG in [assets/templates/](./assets/templates/
 
 ## Procedure
 
-1. In the post's draft folder (`linkedin/posts/YYYY-MM-DD-slug/`), create a `visuals/`
-   subfolder.
-2. Copy the matching template(s) into `visuals/`, numbered `01-…`, `02-…` in reading
-   order. For multi-image and document posts, make slide `01` intentional — it sets the
-   layout (multi-image) or is the cover (document).
-3. Edit each copy on brand:
-   - Canvas 1080×1350 (4:5), unless a single-image post uses 1:1 (1080×1080) or landscape.
+1. Create the visual workspace.
+   - In the post draft folder (`linkedin/posts/YYYY-MM-DD-slug/`), create a `visuals/` subfolder.
+2. Create the SVG source set.
+   - Copy matching template(s) into `visuals/`, numbered `01-…`, `02-…` in reading order.
+   - For multi-image and document posts, make slide `01` intentional: it sets the layout
+     (multi-image) or acts as the cover (document).
+3. Finish all SVG edits before exporting.
+   - Canvas: 1080×1350 (4:5), unless a single-image post uses 1:1 (1080×1080) or landscape.
    - Keep ~90px safe margins.
    - Branding: use the embedded **Qnit logo**, never a text wordmark. Inline the white logo
      (`brand/assets/Brand Logo/SVG/Qnit_logo_white.svg`) on dark backgrounds and the blue logo
-     on light ones — the templates already include it as a nested `<svg>`.
+     on light ones — templates already include it as nested `<svg>`.
    - Colors: bg `#070656` or `#05032e`; accents `#21b4bb` `#3c91e6` `#ff7065`;
      text `#FFFFFF`; grey `#5c5c5c` for body only.
    - Font **Quicksand**: headings Bold (700), body Medium (500).
    - SVG has no auto-wrap — break lines manually with `<tspan>`.
-4. Export (below) and commit the generated `export/` files.
-5. Record alt text for every image in the post draft's Assets section (see
-   [write-social-content](../write-social-content/SKILL.md)).
-
+4. Run export as the final build step (after all SVGs are complete).
+   - Use the commands in **Export** below.
+   - Confirm outputs exist in `export/linkedin/` as `NN.png` (and `export/linkedin/document.pdf` for document posts).
+   - Commit generated `export/` files with the SVG sources.
+5. Record accessibility metadata last.
+   - Add alt text for every image in the post draft's Assets section (see
+     [write-social-content](../write-social-content/SKILL.md)).
 ## Export
+
+Pass `<project-path>` relative to the **repository root** (for example
+`linkedin/posts/YYYY-MM-DD-slug`) even when running the command from
+`export-tooling/`. Do not prefix it with `../`.
 
 ```bash
 # from export-tooling/
 npm install                                          # first time only
-npm run export -- linkedin/posts/YYYY-MM-DD-slug         # single-image / multi-image (PNGs)
-npm run export -- linkedin/posts/YYYY-MM-DD-slug --pdf   # document (PDF) post
+npm run export -- linkedin/posts/YYYY-MM-DD-slug                               # PNGs for both platforms
+npm run export -- linkedin/posts/YYYY-MM-DD-slug --target linkedin             # PNGs only for LinkedIn
+npm run export -- linkedin/posts/YYYY-MM-DD-slug --target instagram            # PNGs only for Instagram
+npm run export -- linkedin/posts/YYYY-MM-DD-slug --target linkedin --pdf       # LinkedIn PNGs + document (PDF)
 ```
 
-This writes `export/instagram/NN.png` and `export/linkedin/NN.png` per slide (use these
-for single-image and multi-image posts). It builds `export/linkedin/document.pdf` only
-when you pass `--pdf`, for a LinkedIn document (PDF) post. Full details, fallbacks, and
-publishing steps: [references/exporting.md](./references/exporting.md).
+This writes `NN.png` files to selected targets under `export/instagram/` and/or
+`export/linkedin/` (use these for single-image and multi-image posts). The default
+target is both platforms. It builds `export/linkedin/document.pdf` only when you
+pass `--pdf` with `--target linkedin` (or default `both`) for a LinkedIn document
+(PDF) post. Full details, fallbacks, and publishing steps:
+[references/exporting.md](./references/exporting.md).
 
 ## Rules
 
